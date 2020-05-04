@@ -23,7 +23,6 @@ import static org.mockito.Mockito.when;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-
 @ExtendWith(MockitoExtension.class)
 class ArtifactControllerTest {
 
@@ -37,25 +36,21 @@ class ArtifactControllerTest {
 
     @BeforeEach
     void setUp() {
-
-
+        
         mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
         Artifact a1 = new Artifact();
         a1.setId("1250808601736515584");
         a1.setName("Deluminator");
         a1.setDescription("A Deluminator is a device invented by Albus Dumbledore that resembles a cigarette lighter. It is used to remove or absorb (as well as return) the light from any light source to provide cover to the user.");
         a1.setImageUrl("imageUrl");
-
         Artifact a2 = new Artifact();
         a2.setId("1250808601744904193");
         a2.setName("Invisibility Cloak");
         a2.setDescription("An invisibility cloak makes the wearer invisible.");
         a2.setImageUrl("imageUrl");
-
         list = new ArrayList<>();
         list.add(a1);
         list.add(a2);
-
     }
 
     @Test
